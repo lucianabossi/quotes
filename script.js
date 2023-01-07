@@ -1,11 +1,27 @@
 //getting html elements
-const selectMenu = document.querySelector('#categories');
+const selectMenu = document.getElementById('categories');
 
 //getting categories from API
 async function getCategories() {
-    let response = await fetch('https://quotes.rest/qod/categories');
-    let data = await response.json();
-    return data
+    try {
+        const response = await fetch('https://quotes.rest/qod/categories');
+        const data = response.json();
+        return data
+    } catch (err) {
+        console.log(err)
+    }
+    
 };
 
-console.log(getCategories());
+//creating options inside the select menu
+async function showCategories() {
+    var options = await getCategories();
+    const optionsName = Object.getOwnPropertyNames(options.contents.categories);
+    for(let i=0; i< optionsName.length; i++) {
+        const newOption = document.createElement('option');
+        newOption.innerText = optionsName[i];
+        selectMenu.appendChild(newOption);
+    }
+};
+
+showCategories();
