@@ -1,6 +1,7 @@
 //getting html elements
 const selectMenu = document.getElementById('categories');
 const buttonOk = document.getElementById('btnOk');
+const overlay = document.getElementById('overlay');
 
 //getting categories from API
 async function getCategories() {
@@ -52,5 +53,7 @@ buttonOk.addEventListener('click', (event) => {
     randomQuote.then(result => {
         console.log(result.contents.quotes[0].quote);
         console.log(result.contents.quotes[0].author);
+        overlay.classList.remove('display_none');
+        overlay.classList.add('display_block');
     })
 })

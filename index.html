@@ -9,17 +9,17 @@
 </head>
 <body>
     <!--https://quotes.rest/-->
-    <span style="z-index:50;font-size:0.9em; font-weight: bold;">
-        <img src="https://theysaidso.com/branding/theysaidso.png" height="20" width="20" alt="theysaidso.com"/>
-        <a href="https://theysaidso.com" title="Powered by quotes from theysaidso.com" style="color: #ccc; margin-left: 4px; vertical-align: middle;">
-          They Said So®
-        </a>
-  </span>
+    
     <div>
         <select name="categories" id="categories">
             <option value="">what's your mood today?</option>
         </select>
         <button id="btnOk">OK</button>
+        <div id="overlay" class="display_none"></div>
+        <div id="box_quote">
+            <p></p>
+            <p></p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
