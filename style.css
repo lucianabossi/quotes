@@ -3,3 +3,17 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+#categories {
+    width: 15vw;
+    height: 3vh;
+    border-radius: 10px;
+    border: none;
+    margin: 3vh 0 0 2vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    color: #1c1c1cc4;
+    text-indent: 0.2cm;
+    background-color: #E6E8E8;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
