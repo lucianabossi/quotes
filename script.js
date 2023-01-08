@@ -33,6 +33,7 @@ var userCategory;
 selectMenu.addEventListener('change', (event) => {
     userCategory = selectMenu.value;
 });
+
 //getting quotes from api
 async function getQuote() {
     try {
@@ -45,6 +46,11 @@ async function getQuote() {
     }
 }
 
+//displaying quote of the day
 buttonOk.addEventListener('click', (event) => {
-    console.log(getQuote());
+    let randomQuote = getQuote();
+    randomQuote.then(result => {
+        console.log(result.contents.quotes[0].quote);
+        console.log(result.contents.quotes[0].author);
+    })
 })
