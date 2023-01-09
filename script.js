@@ -2,6 +2,10 @@
 const selectMenu = document.getElementById('categories');
 const buttonOk = document.getElementById('btnOk');
 const overlay = document.getElementById('overlay');
+const quote = document.getElementById('quote');
+const author = document.getElementById('author');
+const boxQuote = document.getElementById('box_quote');
+const buttonClose = document.getElementById('btnClose');
 
 //getting categories from API
 async function getCategories() {
@@ -51,9 +55,16 @@ async function getQuote() {
 buttonOk.addEventListener('click', (event) => {
     let randomQuote = getQuote();
     randomQuote.then(result => {
-        console.log(result.contents.quotes[0].quote);
-        console.log(result.contents.quotes[0].author);
+        quote.innerText = result.contents.quotes[0].quote;
+        author.innerText = result.contents.quotes[0].author;
         overlay.classList.remove('display_none');
         overlay.classList.add('display_block');
+        boxQuote.classList.remove('display_none');
+        boxQuote.classList.add('display_block');
     })
+})
+
+//reloading the page
+buttonClose.addEventListener('click', (event) => {
+    location.reload();
 })
