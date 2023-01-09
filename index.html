@@ -9,10 +9,21 @@
 </head>
 <body>
     <!--https://quotes.rest/-->
+    
     <div>
-        <select name="categories" id="categories"></select>
+        <select name="categories" id="categories">
+            <option value="">what's your mood today?</option>
+        </select>
+        <button id="btnOk">OK</button>
+        <div id="overlay" class="display_none"></div>
+        <div id="box_quote" class="display_none">
+            <div class="box">
+                <p id="quote"></p>
+                <p id="author"></p>
+            </div>
+            <button id="btnClose">X</button>
+        </div>
     </div>
-    <script src="script.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
